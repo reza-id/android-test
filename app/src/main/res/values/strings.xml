@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Testing Example</string>
+    <string name="favorites">Favorites</string>
+    <string name="countries">Countries</string>
+    <array name="regions">
+        <item>Africa</item>
+        <item>Americas</item>
+        <item>Asia</item>
+        <item>Europe</item>
+        <item>Oceania</item>
+    </array>
+</resources>
