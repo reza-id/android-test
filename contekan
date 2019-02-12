@@ -1,0 +1,30 @@
+Thread.sleep(3000)
+        onView(withId(prev_match)).check(matches(isDisplayed()))
+        onView(withId(prev_match)).perform(
+                RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(5))
+        onView(withId(prev_match)).perform(
+                RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(6, click()))
+
+        Thread.sleep(4000)
+        onView(withId(add_to_favorite)).check(matches(isDisplayed()))
+        onView(withId(add_to_favorite)).perform(click())
+        onView(withText("Added to favorite")).check(matches(isDisplayed()))
+
+        pressBack()
+
+        onView(withId(bottom_navigation)).check(matches(isDisplayed()))
+        onView(withId(favorites)).perform(click())
+
+        Thread.sleep(300)
+        onView(withId(list_favorite)).check(matches(isDisplayed()))
+        onView(withId(list_favorite)).perform(
+                RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+
+        Thread.sleep(4000)
+        onView(withIcon(R.drawable.ic_added_to_favorites)).check(matches(isDisplayed()))
+        onView(withIcon(R.drawable.ic_added_to_favorites)).perform(click())
+        onView(withText("Removed from favorite")).check(matches(isDisplayed()))
+        pressBack()
+        onView(withId(refresh_layout)).perform(withCustomConstraints(swipeDown(), isDisplayingAtLeast(85)))
+        Thread.sleep(300)
+        onView(withText(R.string.no_data)).check(matches(isDisplayed()))

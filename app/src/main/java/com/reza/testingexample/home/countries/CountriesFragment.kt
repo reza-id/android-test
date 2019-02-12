@@ -12,6 +12,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.google.gson.Gson
+import com.reza.testingexample.R.id.region_spinner
+import com.reza.testingexample.R.id.list_countries
 import com.reza.testingexample.R.array.regions
 import com.reza.testingexample.R.color.colorAccent
 import com.reza.testingexample.data.api.ApiRepository
@@ -74,7 +76,9 @@ class CountriesFragment : Fragment(), AnkoComponent<Context>, CountriesView {
             leftPadding = dip(16)
             rightPadding = dip(16)
 
-            spinner = spinner()
+            spinner = spinner() {
+                id = region_spinner
+            }
             swipeRefresh = swipeRefreshLayout {
                 setColorSchemeResources(
                         colorAccent,
@@ -87,6 +91,7 @@ class CountriesFragment : Fragment(), AnkoComponent<Context>, CountriesView {
                     lparams(width = matchParent, height = wrapContent)
 
                     listCountry = recyclerView {
+                        id = list_countries
                         lparams(width = matchParent, height = wrapContent)
                         layoutManager = LinearLayoutManager(ctx)
                     }

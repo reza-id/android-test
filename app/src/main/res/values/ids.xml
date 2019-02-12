@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="country_name" type="id" />
+    <item name="capital_name" type="id" />
+    <item name="region_spinner" type="id" />
+    <item name="list_countries" type="id" />
+</resources>
